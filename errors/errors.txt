@@ -1,0 +1,49 @@
+Problem #1: npx wdio run wdio.conf.js
+
+[0-0]  Error:  Unable to load spec files quite likely because they rely on `browser` object that is not fully initialised.
+`browser` object has only `capabilities` and some flags like `isMobile`.
+Helper files that use other `browser` commands have to be moved to `before` hook.
+Spec file(s): C:\vacations\vacationSystem\tests\vacation.test.js
+Error: C:\vacations\vacationSystem\tests\vacation.test.js:1
+import VacationApp from '../src/pages/vacation.js';
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1018:16)
+    at Module._compile (node:internal/modules/cjs/loader:1066:27)
+    at Module._compile (C:\vacations\vacationSystem\node_modules\pirates\lib\index.js:99:24)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1131:10)
+    at Object.newLoader [as .js] (C:\vacations\vacationSystem\node_modules\pirates\lib\index.js:104:7)
+    at Module.load (node:internal/modules/cjs/loader:967:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:807:14)
+    at Module.require (node:internal/modules/cjs/loader:991:19)
+    at require (node:internal/modules/cjs/helpers:92:18)
+    at Object.exports.requireOrImport (C:\vacations\vacationSystem\node_modules\mocha\lib\esm-utils.js:20:12)
+
+    Problem #2
+
+    PS C:\vacations\vacationSystem> npm run test
+
+> vacationsystem@1.0.0 test
+> node ./node_modules/.bin/wdio wdio.conf.js --suite test
+
+C:\vacations\vacationSystem\node_modules\.bin\wdio:2
+basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+          ^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at wrapSafe (node:internal/modules/cjs/loader:1018:16)
+    at Module._compile (node:internal/modules/cjs/loader:1066:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)
+    at Module.load (node:internal/modules/cjs/loader:967:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:807:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)
+    at node:internal/main/run_main_module:17:47
+npm ERR! code 1
+npm ERR! path C:\vacations\vacationSystem
+npm ERR! command failed
+npm ERR! command C:\WINDOWS\system32\cmd.exe /d /s /c node ./node_modules/.bin/wdio wdio.conf.js --suite test
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Maria_Parfenyuk\AppData\Local\npm-cache\_logs\2020-11-30T19_50_07_664Z-debug.log
+PS C:\vacations\vacationSystem>
