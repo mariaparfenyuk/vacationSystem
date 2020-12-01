@@ -35,6 +35,14 @@ describe('Vacation system', () => {
     MainPage.closeVacation()
     expect(MainPage.closedStatus.isDisplayed())
     })
+
+  it('Add vacation with invalid dates', () => {
+    MainPage.open()
+    MainPage.addVacationButton.waitForDisplayed()
+    MainPage.clickAddVacation()
+    MainPage.addVacationInPopup('12/12/2019', '12/20/2019')
+    expect(MainPage.errorMessage.isDisplayed())
+    })
 })
 
 
